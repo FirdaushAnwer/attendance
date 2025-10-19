@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="wrap" role="application" aria-label="Attendance tracker">
+      <div class="account">
+        <span id="acctName" class="muted">Guest</span>
+        <button id="loginBtn" class="small">Login</button>
+        <button id="logoutBtn" class="small" style="display:none">Logout</button>
+      </div>
+      <header>
+        <h1>Attendance Tracker</h1>
+        <div class="controls">
+          <label class="muted">Date
+            <input id="date" type="date" />
+          </label>
+          <div class="muted" id="stats">0 present / 0 total</div>
+        </div>
+      </header>
+
+      <div class="row">
+        <div class="left">
+          <input id="nameInput" type="text" placeholder="Add student name and press Enter" />
+          <button id="addBtn">Add</button>
+          <input id="search" class="search" type="text" placeholder="Search..." />
+        </div>
+
+        <div class="right">
+          <button id="markAll" class="ghost small">Mark All Present</button>
+          <button id="clearDate" class="ghost small">Clear Date</button>
+          <button id="clearAll" class="ghost small">Reset All</button>
+          <label class="ghost small file-label">
+            Import <input id="importFile" class="file" type="file" accept=".csv,text/csv" />
+          </label>
+          <button id="exportCsv" class="small">Export CSV</button>
+        </div>
+      </div>
+
+      <table id="tbl" aria-live="polite">
+        <thead>
+          <tr>
+            <th class="name">Student</th>
+            <th class="present">Present</th>
+            <th class="actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+
+      <footer>
+        <div class="muted">Tip: click a student name to edit. Changes saved automatically.</div>
+        <div class="muted">Data stored locally in your browser.</div>
+      </footer>
+  <div class="credit">DEVELOPED BY FIRDAUSH &nbsp;—&nbsp; <a class="credit-link" href="mailto:firdausanwer909@gmail.com">firdausanwer909@gmail.com</a></div>
+    </div>
+
+    <script src="js/app.js" defer></script>
+    <!-- Auth modal -->
+    <div id="authModal" class="modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+        <h2 id="authTitle">Login or Register</h2>
+        <div class="tabs">
+          <button id="tabLogin" class="active">Login</button>
+          <button id="tabRegister">Register</button>
+        </div>
+        <div class="form" id="loginForm">
+          <label>Username<input id="loginUser" type="text" /></label>
+          <label>Password<input id="loginPass" type="password" /></label>
+          <div class="actions"><button id="doLogin">Login</button><button id="closeAuth" class="ghost">Close</button></div>
+        </div>
+        <div class="form" id="regForm" style="display:none">
+          <label>Username<input id="regUser" type="text" /></label>
+          <label>Password<input id="regPass" type="password" /></label>
+          <label>Confirm<input id="regPass2" type="password" /></label>
+          <div class="actions"><button id="doRegister">Register</button><button id="closeAuth2" class="ghost">Close</button></div>
+        </div>
+        <div id="authMsg" class="muted small"></div>
+      </div>
+    </div>
+  </body>
+</html>

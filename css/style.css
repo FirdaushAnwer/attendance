@@ -1,0 +1,48 @@
+:root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa4b2;--good:#10b981}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;color:#e6eef6;background:linear-gradient(180deg,#071026 0%,#071022 100%)}
+.wrap{max-width:980px;margin:28px auto;padding:20px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.7);position:relative;z-index:2}
+/* background canvas sits behind the UI */
+#bg-canvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;mix-blend-mode:screen;opacity:0.8}
+
+.account{position:absolute;right:18px;top:18px;display:flex;gap:8px;align-items:center}
+
+/* Modal */
+.modal{position:fixed;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;z-index:10;background:rgba(2,6,23,0.45);backdrop-filter: blur(4px)}
+.modal[aria-hidden="true"]{display:none}
+.modal-content{background:var(--card);padding:18px;border-radius:10px;width:320px;color:#eaf6fb}
+.modal h2{margin-top:0}
+.modal .tabs{display:flex;gap:8px;margin-bottom:8px}
+.modal .tabs button{flex:1;padding:8px;border-radius:6px;border:0;background:transparent;color:var(--muted)}
+.modal .tabs button.active{background:rgba(255,255,255,0.03);color:#eaf6fb}
+.modal .form label{display:block;margin-bottom:8px}
+.modal input[type="text"],.modal input[type="password"]{width:100%;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:#071225;color:inherit}
+.modal .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+.modal .muted{margin-top:8px}
+header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:12px}
+h1{font-size:20px;margin:0;color:#eaf6fb}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input[type="text"], input[type="date"], select{background:#071225;border:1px solid rgba(255,255,255,0.04);color:#eaf6fb;padding:8px 10px;border-radius:8px}
+button{background:linear-gradient(180deg,var(--accent),#f09d6c);border:0;color:#021219;padding:8px 12px;border-radius:8px;cursor:pointer}
+button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+.row{display:flex;gap:12px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+.left{display:flex;gap:8px;align-items:center}
+table{width:100%;border-collapse:collapse;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border-radius:8px;overflow:hidden}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.02);color:#dbeaf0;font-size:14px}
+th{background:rgba(255,255,255,0.02);font-weight:600;color:#83e0f5}
+.name{min-width:220px}
+.present{width:120px;text-align:center}
+.actions{width:140px;text-align:right}
+.counter{font-weight:700;color:var(--good)}
+.muted{color:var(--muted);font-size:13px}
+.small{font-size:13px;padding:6px 8px}
+.inline-edit{background:transparent;border:0;color:inherit;padding:0;font:inherit}
+.search{min-width:180px}
+.file{display:none}
+.file-label{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
+@media(max-width:640px){.left{flex-direction:column;align-items:flex-start}.actions{width:auto}}
+
+.credit{margin-top:12px;text-align:center;color:rgba(255,255,255,0.18);font-weight:700;letter-spacing:1px}
+.credit-link{color:rgba(255,255,255,0.28);text-decoration:none;font-weight:600}
+.credit-link:hover{color:var(--accent);text-decoration:underline}

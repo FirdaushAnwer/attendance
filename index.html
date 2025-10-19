@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Attendance Tracker — Home</title>
+    <meta http-equiv="refresh" content="5;url=attendance.html" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* small overrides to center contents on the landing page */
+      body.landing {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 2rem;
+        background: linear-gradient(180deg, #0d1b2a 0%, #102a43 100%);
+        color: #e6eef8;
+      }
+      .landing .card {
+        max-width: 880px;
+        width: 100%;
+        background: rgba(255,255,255,0.04);
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+        text-align: center;
+      }
+      .landing h1 { margin: 0 0 0.5rem 0; font-size: 1.65rem; }
+      .landing p.lead { margin: 0 0 1.25rem 0; color: #cfe3ff; }
+      .btn-cta {
+        display: inline-block;
+        background: linear-gradient(90deg,#6bb9ff,#3b82f6);
+        color: #04263b;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 6px 18px rgba(59,130,246,0.24);
+      }
+      .meta-note { margin-top: 1rem; font-size: 0.9rem; color: #90a8c7; }
+    </style>
+  </head>
+  <body class="landing">
+    <div class="card">
+      <h1>Attendance Tracker</h1>
+      <p class="lead">A simple client-side attendance app. Your data is stored locally in your browser.</p>
+      <p>
+        <a class="btn-cta" href="attendance.html">Open the Attendance App</a>
+      </p>
+      <p class="meta-note">You will be redirected automatically in 5 seconds. If the redirect doesn't work, use the button above.</p>
+      <p style="margin-top:1.5rem;font-size:0.9rem;color:#bcd7ff">Developed by <a href="mailto:firdausanwer909@gmail.com" style="color:#e6f4ff;text-decoration:underline">firdausanwer909@gmail.com</a></p>
+    </div>
+
+    <script>
+      // Gentle UX: if user interacts, don't redirect.
+      let redirect = true;
+      window.addEventListener('click', ()=> redirect = false, {once:true});
+      setTimeout(()=>{
+        if (redirect) location.href = 'attendance.html';
+      }, 5000);
+    </script>
+  </body>
+</html>
