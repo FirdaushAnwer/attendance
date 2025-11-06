@@ -32,7 +32,7 @@ Deployed site
 
 This project is set up to deploy the WEB/ folder to GitHub Pages using the included GitHub Actions workflow (.github/workflows/deploy.yml). After pushing to main, the workflow publishes to the gh-pages branch and the site should be available at:
 
-https://firdaushanwer.github.io/attendance/
+https://firdaushanwer.github.io/Attendance-Tracker-/
 
 Index page
 
